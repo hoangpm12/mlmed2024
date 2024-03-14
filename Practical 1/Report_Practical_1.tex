@@ -1,0 +1,84 @@
+\documentclass[conference]{IEEEtran}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\title{ECG Heartbeat Classification}
+\author{Hua Hai Minh - BI12-272}
+\begin{document}
+\maketitle
+
+\section{Introduction}
+
+The heartbeat is a fundamental physiological signal that provides crucial insights into cardiovascular health. Understanding the intricacies of heartbeats is essential for early detection and diagnosis of cardiac abnormalities. In clinical practice, analyzing and interpreting heartbeat patterns through Electrocardiogram (ECG) signals play an important role in identifying various cardiac conditions.
+
+Machine Learning techniques offer the potential to automate and enhance the accuracy of heartbeat classification, contributing to faster and more reliable diagnoses. This paper explores the application of machine learning using Random Forest, in the classification of ECG heartbeats. By applying machine learning algorithms, this paper aim to improve the efficiency of cardiac diagnosis and contribute to advancements in healthcare technology.
+
+\section{Background}
+
+ECG, or Electrocardiogram, is a widely used diagnostic tool that records the electrical activity of the heart over time. It produces a visual representation of the heartbeat, allowing clinicians to identify irregularities and abnormalities in cardiac function. Random Forest, a robust machine learning algorithm, is known for its versatility and accuracy in classification tasks, making it a suitable candidate for ECG heartbeat classification.
+
+\section{Method}
+
+The analytical process comprised the following sequential steps:
+
+\begin{enumerate}
+    \item \textbf{Data Preprocessing:} The dataset go through preprocessing steps, including normalization, handling missing values, and feature scaling, to ensure optimal performance of the Random Forest model.
+    
+    \item \textbf{Model Training:} The Random Forest model was trained using a subset of the dataset, incorporating techniques such as cross-validation to ensure its ability to generalize.
+    
+    \item \textbf{Performance Evaluation:} The model's performance was evaluated using metrics such as accuracy, precision, recall, and F1 score. 
+\end{enumerate}
+
+These steps collectively contribute to a comprehensive understanding of the methodology employed in the application of the Random Forest algorithm for ECG heartbeat classification.
+
+\section{Dataset}
+In this study, the dataset employed comprises a total of 109,446 samples, categorized into five distinct classes. The data originates from Physionet's MIT-BIH Arrhythmia Dataset and is characterized by a sampling frequency of 125Hz. The dataset encompasses diverse cardiac rhythm patterns, including 'Non-ectopic beats (normal beat)', 'Supraventricular ectopic beats', 'Ventricular ectopic beats', 'Fusion Beats', and 'Unknown Beats', each represented by numerical labels ranging from 0 to 4, respectively. This varied dataset take a crucial role for training and evaluating the ECG heartbeat classification model, providing a comprehensive representation of cardiac arrhythmias for analysis.
+
+\section{Results}
+The following results, presented in the evaluation table, provide a overall summary of the performance metrics obtained from the application of the Random Forest model to the ECG heartbeat classification dataset.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{lcccc}
+        \toprule
+        & Precision & Recall & F1-Score & Support \\
+        \midrule
+        0.0 & 0.95 & 1.00 & 0.98 & 18118 \\
+        1.0 & 0.99 & 0.50 & 0.66 & 556 \\
+        2.0 & 0.98 & 0.77 & 0.86 & 1448 \\
+        3.0 & 0.77 & 0.15 & 0.25 & 162 \\
+        4.0 & 1.00 & 0.9 & 0.95 & 1608 \\
+        \midrule
+        \textbf{Accuracy} & 0.96 & 21892 \\
+        \textbf{Macro Avg} & 0.94 & 0.66 & 0.74 & 21892 \\
+        \textbf{Weighted Avg} & 0.96 & 0.96 & 0.95 & 21892 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Random Forest Results}
+    \label{tab:classification_results}
+\end{table}
+
+In interpreting the effectiveness of the  ECG heartbeat classification model, the confusion matrix serves as a valuable tool. This matrix provides a detailed breakdown of the model's performance by illustrating the counts of true positive, true negative, false positive, and false negative predictions for each class. The insightful information derived from the confusion matrix allows us to assess the model's accuracy, precision, recall, and overall classification capabilities with a granular understanding of its performance across different heartbeat categories.
+
+\begin{figure}[h]
+    \centering
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{./cm.png}
+        \caption{Confusion matrix}
+        \label{fig:Confusion matrix}
+    \end{minipage}\hfill
+\end{figure}
+
+\section{Conclusion}
+
+In conclusion, this paper presents a comprehensive exploration of ECG heartbeat classification using the Random Forest algorithm. By integrating machine learning into cardiac diagnostics, we aim to enhance the accuracy and efficiency of identifying heart-related conditions. The results obtained from our evaluation demonstrate the potential of the proposed method, opening avenues for further research and development in the intersection of healthcare and machine learning.
+
+\end{document}
