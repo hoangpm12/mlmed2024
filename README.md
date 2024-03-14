@@ -12,5 +12,5 @@ Student Info
 
 * Name: Pham Minh Hoang
 * ID: BI12-175
-* Group ID: ???
+* Group ID:
 
